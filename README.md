@@ -1,91 +1,76 @@
-# Sales Forecasting using Machine Learning
+# 📈 Sales Forecasting using Machine Learning
 
-A machine learning project that analyzes historical sales data, performs time-series feature engineering, and forecasts future weekly sales using Random Forest Regression.
+A machine learning and data analysis project developed during my **ReTech internship**, progressing from sales data analysis to a Machine Learning-based **Sales Forecasting System** with an interactive **Streamlit dashboard**.
 
-## Project Overview
+The project analyzes historical sales transactions using **Python, Pandas, NumPy, Scikit-learn, Machine Learning, time-series feature engineering, and data visualization** to identify historical sales patterns and forecast future weekly sales.
 
-This project uses historical sales transaction data to identify sales patterns and build a machine learning model for forecasting future sales.
+> ⚠️ **Educational Project:** This system is developed for learning and analytical purposes. Forecasted values are based on historical data and should not be considered guaranteed future sales.
 
-The project includes data preprocessing, weekly sales aggregation, lag feature creation, rolling averages, model training, evaluation, and an interactive Streamlit dashboard.
+---
 
-## Dataset
+## 🚀 Project Overview
 
-The dataset contains 1,000 sales transactions with the following columns:
+The project uses historical sales transaction data containing information about:
 
-- Product_ID
-- Sale_Date
-- Sales_Rep
-- Region
-- Sales_Amount
-- Quantity_Sold
-- Product_Category
-- Unit_Cost
-- Unit_Price
-- Customer_Type
+- Products
+- Sales representatives
+- Regions
+- Sales amount
+- Quantity sold
+- Product categories
+- Unit cost
+- Unit price
+- Customer type
+- Sale date
 
-## Machine Learning Approach
+The system converts transaction-level sales data into **weekly sales data** and uses historical sales patterns to create features for Machine Learning.
 
-The transaction-level sales data is first aggregated into weekly sales.
+The Machine Learning model then predicts future weekly sales.
 
-Time-series features are then created from historical sales:
+---
 
-- Previous 1-week sales
-- Previous 2-week sales
-- Previous 4-week sales
-- Previous 8-week sales
-- Previous 12-week sales
-- 4-week rolling average
-- 8-week rolling average
-- 12-week rolling average
-- Month
-- Week
-- Year
+## 📊 Dataset
 
-These features are used to train a Random Forest Regression model.
+The dataset contains **1,000 sales transactions** with the following columns:
 
-## Model
+| Column | Description |
+|---|---|
+| `Product_ID` | Unique product identifier |
+| `Sale_Date` | Date of the sale |
+| `Sales_Rep` | Sales representative responsible for the sale |
+| `Region` | Sales region |
+| `Sales_Amount` | Total sales amount |
+| `Quantity_Sold` | Quantity of products sold |
+| `Product_Category` | Category of the product |
+| `Unit_Cost` | Cost of one unit |
+| `Unit_Price` | Selling price of one unit |
+| `Customer_Type` | Type of customer |
 
-The project uses:
+---
 
-**Random Forest Regression**
-
-The dataset is divided chronologically:
-
-- 80% historical data → Training
-- 20% later data → Testing
-
-A time-based split is used instead of a random split because the project focuses on forecasting.
-
-## Model Evaluation
-
-The model is evaluated using:
-
-- Mean Absolute Error (MAE)
-- Root Mean Squared Error (RMSE)
-- R² Score
-
-The project also compares the machine learning model with a simple average-sales baseline.
-
-## Streamlit Dashboard
-
-The interactive dashboard provides:
-
-- Dataset overview
-- Total sales
-- Average sales
-- Historical weekly sales
-- Actual vs predicted sales
-- Model performance metrics
-- Future weekly sales forecast
-- Feature importance
-- Forecast horizon selection
-
-## Project Structure
+## 🧠 Sales Forecasting Workflow
 
 ```text
-Sales-Forecasting/
-│
-├── app.py
-├── sales_data-selected-columns.csv
-├── requirements.txt
-└── README.md
+Sales Transaction Data
+        ↓
+Data Loading
+        ↓
+Data Cleaning
+        ↓
+Date Processing
+        ↓
+Weekly Sales Aggregation
+        ↓
+Time-Series Feature Engineering
+        ↓
+Lag Features
+        ↓
+Rolling Averages
+        ↓
+Random Forest Regression
+        ↓
+Model Evaluation
+        ↓
+Future Sales Forecast
+        ↓
+Streamlit Dashboard
